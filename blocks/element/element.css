@@ -1,0 +1,14 @@
+.element {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 282px));
+  gap: 17px;
+}
+
+@media (max-width: 480px) {
+  .element {
+    gap: 20px;
+  }
+}

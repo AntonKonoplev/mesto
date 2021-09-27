@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img src="images/logo.svg" alt="лого" class="header__logo" />
+        <img src="images/Line.png" alt="линия" class="header__line" />
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img src="images/Avatar.png" alt="аватар" class="profile__avatar" />
+          <div class="profile__container">
+            <div class="profile__info">
+              <div class="profile__name-container">
+                <p class="profile__name">Жак-Ив Кусто</p>
+                <button class="profile__edit-button"></button>
+              </div>
+              <p class="profile__about-me">Исследователь океана</p>
+            </div>
+            <button class="profile__add-button"></button>
+          </div>
+        </section>
+
+        <section class="elements">
+          <ul class="element">
+            <li class="element__card">
+              <img
+                src="images/kirill-pershin-1088404-unsplash.jpg"
+                alt="карачаевск"
+                class="element__image"
+              />
+              <div class="element__container">
+                <p class="element__name">Карачаевск</p>
+                <button class="element__like"></button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="images/kirill-pershin-1404681-unsplash.jpg"
+                alt="эльбрус"
+                class="element__image"
+              />
+              <div class="element__container">
+                <p class="element__name">Гора Эльбрус</p>
+                <button class="element__like"></button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="images/kirill-pershin-3-unsplash.jpg"
+                alt="домбай"
+                class="element__image"
+              />
+              <div class="element__container">
+                <p class="element__name">Домбай</p>
+                <button class="element__like"></button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="images/kalen-emsley-uSFOwYo1qEw-unsplash.jpg"
+                alt="канмор"
+                class="element__image"
+              />
+              <div class="element__container">
+                <p class="element__name">Канмор</p>
+                <button class="element__like"></button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="images/simon-berger-RBpUVzCP3ws-unsplash.jpg"
+                alt="грюнау-им-Альмталь"
+                class="element__image"
+              />
+              <div class="element__container">
+                <p class="element__name">Грюнау-им-Альмталь</p>
+                <button class="element__like"></button>
+              </div>
+            </li>
+            <li class="element__card">
+              <img
+                src="images/alin-rusu-QrXFAH7g7So-unsplash.jpg"
+                alt="рейкхольт"
+                class="element__image"
+              />
+              <div class="element__container">
+                <p class="element__name">Рейкхольт</p>
+                <button class="element__like"></button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      </footer>
+      <section class="popup">
+        <div class="popup__container">
+          <img src="images/Close-Icon.png" alt="" class="popup__close" />
+          <div class="popup__content">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form">
+              <fieldset class="popup__fieldset">
+                <input class="popup__form-username" type="text" />
+                <img
+                  src="images/Line-2.png"
+                  alt="линия"
+                  class="popup__form-line"
+                />
+              </fieldset>
+              <fieldset class="popup__fieldset">
+                <input class="popup__form-about-me" type="text" />
+                <img
+                  src="images/Line-2.png"
+                  alt="линия"
+                  class="popup__form-line"
+                />
+              </fieldset>
+              <fieldset class="popup__form-save">
+                <input class="popup__submit" type="submit" value="Сохранить" />
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
+</html>
