@@ -2,12 +2,13 @@
   height: 50px;
   width: 150px;
   cursor: pointer;
-  background-image: url(../../../images/Add-Button.svg);
+  background-image: url(../../../images/add-button.svg);
   background-color: black;
   background-repeat: no-repeat;
-  background-size: contain;
-  border: none;
+  background-position: center;
   padding: 0;
+  border: 2px solid #ffffff;
+  transition: 0.8s;
 }
 
 .profile__add-button:hover {
@@ -28,9 +29,8 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .profile__add-button {
-    background-image: url(../../../images/Add-Button320.svg);
     width: 200px;
     height: 35px;
   }

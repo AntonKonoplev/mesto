@@ -1,8 +1,16 @@
 .popup__close {
   position: absolute;
   top: -40px;
-  left: 440px;
+  right: -40px;
   cursor: pointer;
+  background-image: url(../../../images/close-icon.svg);
+  width: 32px;
+  height: 32px;
+  background-color: black;
+  background-size: contain;
+  border: none;
+  padding: 0;
+  transition: 0.8s;
 }
 
 .popup__close:hover {
@@ -12,7 +20,7 @@
 @media (max-width: 560px) {
   .popup__close {
     top: -41px;
-    left: 260px;
+    right: 5px;
   }
 }
 

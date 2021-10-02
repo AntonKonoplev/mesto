@@ -2,8 +2,8 @@ const popup = document.querySelector('.popup')
 const popupOpenBtn = document.querySelector('.profile__edit-button')
 const popupCloseBtn = popup.querySelector('.popup__close')
 
-let inputName = popup.querySelector('.popup__form-username') 
-let inputAboutMe = popup.querySelector('.popup__form-about-me')
+let inputName = popup.querySelector('.popup__form-profile_name') 
+let inputAboutMe = popup.querySelector('.popup__form-profile_about-me')
 
 let profileName = document.querySelector('.profile__name')
 let profileAboutMe = document.querySelector('.profile__about-me')

@@ -2,11 +2,13 @@
   height: 24px;
   width: 24px;
   cursor: pointer;
-  background-image: url(../../../images/Edit-Button.png);
+  background-image: url(../../../images/edit-button.svg);
   background-color: black;
-  background-size: contain;
-  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #ffffff;
   padding: 0;
+  transition: 0.8s;
 }
 
 .profile__edit-button:hover {

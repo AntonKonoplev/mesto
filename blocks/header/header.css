@@ -5,10 +5,18 @@
   max-width: 880px;
   padding-top: 45px;
   margin: auto;
+  border-bottom: 1px solid rgba(54, 54, 54, 0.7);
+}
+
+@media (max-width: 900px) {
+  .header {
+    max-width: 80%;
+  }
 }
 
 @media (max-width: 320px) {
   .header {
+    max-width: 100%;
     padding-top: 28px;
   }
 }

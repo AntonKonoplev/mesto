@@ -2,3 +2,9 @@
   height: 120px;
   width: 120px;
 }
+
+@media (max-width: 580px) {
+  .profile__avatar {
+    padding-bottom: 26px;
+  }
+}

@@ -5,7 +5,8 @@
 
 @media (max-width: 320px) {
   .header__logo {
-    width: 103.74px;
-    height: 24.4px;
+    width: 104px;
+    height: 24px;
+    padding-left: 27px;
   }
 }

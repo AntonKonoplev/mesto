@@ -4,12 +4,13 @@
   padding: 0;
   margin: 0;
   max-width: 358px;
-  height: 50px;
+  min-height: 50px;
   margin-top: 48px;
   margin-bottom: 37px;
   display: flex;
   justify-content: center;
   cursor: pointer;
+  transition: 0.8s;
 }
 
 .popup__form-save:hover {
@@ -19,6 +20,6 @@
 @media (max-width: 320px) {
   .popup__form-save {
     max-width: 238px;
-    height: 46px;
+    min-height: 46px;
   }
 }

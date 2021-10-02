@@ -11,7 +11,6 @@
     <div class="page">
       <header class="header">
         <img src="images/logo.svg" alt="лого" class="header__logo" />
-        <img src="images/Line.png" alt="линия" class="header__line" />
       </header>
       <main class="content">
         <section class="profile">
@@ -19,12 +18,12 @@
           <div class="profile__container">
             <div class="profile__info">
               <div class="profile__name-container">
-                <p class="profile__name">Жак-Ив Кусто</p>
-                <button class="profile__edit-button"></button>
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button class="profile__edit-button" type="button"></button>
               </div>
               <p class="profile__about-me">Исследователь океана</p>
             </div>
-            <button class="profile__add-button"></button>
+            <button class="profile__add-button" type="button"></button>
           </div>
         </section>
 
@@ -105,29 +104,27 @@
       </footer>
       <section class="popup">
         <div class="popup__container">
-          <img src="images/Close-Icon.png" alt="" class="popup__close" />
+          <button class="popup__close" type="button"></button>
           <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form class="popup__form">
               <fieldset class="popup__fieldset">
-                <input class="popup__form-username" type="text" />
-                <img
-                  src="images/Line-2.png"
-                  alt="линия"
-                  class="popup__form-line"
+                <input
+                  class="popup__form-profile popup__form-profile_name"
+                  type="text"
+                  name="Имя"
                 />
               </fieldset>
               <fieldset class="popup__fieldset">
-                <input class="popup__form-about-me" type="text" />
-                <img
-                  src="images/Line-2.png"
-                  alt="линия"
-                  class="popup__form-line"
+                <input
+                  class="popup__form-profile popup__form-profile_about-me"
+                  type="text"
+                  name="О себе"
                 />
               </fieldset>
-              <fieldset class="popup__form-save">
+              <div class="popup__form-save">
                 <input class="popup__submit" type="submit" value="Сохранить" />
-              </fieldset>
+              </div>
             </form>
           </div>
         </div>

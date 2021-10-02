@@ -2,8 +2,9 @@
   margin-left: 30px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .profile__info {
     margin: 0;
+    width: 240px;
   }
 }
