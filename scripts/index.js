@@ -7,7 +7,7 @@ let inputAboutMe = popup.querySelector('.popup__form-profile_about-me')
 
 let profileName = document.querySelector('.profile__name')
 let profileAboutMe = document.querySelector('.profile__about-me')
-let saveButton = popup.querySelector('.popup__form-save')
+let saveButton = popup.querySelector('.popup__submit')
 
 let form = popup.querySelector('.popup__form')
 

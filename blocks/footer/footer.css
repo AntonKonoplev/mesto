@@ -5,6 +5,18 @@
   padding-bottom: 60px;
 }
 
+@media (max-width: 923px) {
+  .footer {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 610px) {
+  .footer {
+    max-width: 290px;
+  }
+}
+
 @media (max-width: 320px) {
   .footer {
     width: 282px;

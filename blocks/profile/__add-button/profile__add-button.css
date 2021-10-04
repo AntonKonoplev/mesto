@@ -8,6 +8,7 @@
   background-position: center;
   padding: 0;
   border: 2px solid #ffffff;
+  border-radius: 2px;
   transition: 0.8s;
 }
 
