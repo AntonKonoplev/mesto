@@ -28,104 +28,94 @@
         </section>
 
         <section class="elements">
-          <ul class="element">
-            <li class="element__card">
-              <img
-                src="images/kirill-pershin-1088404-unsplash.jpg"
-                alt="карачаевск"
-                class="element__image"
-              />
-              <div class="element__container">
-                <p class="element__name">Карачаевск</p>
-                <button class="element__like" type="button"></button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="images/kirill-pershin-1404681-unsplash.jpg"
-                alt="эльбрус"
-                class="element__image"
-              />
-              <div class="element__container">
-                <p class="element__name">Гора Эльбрус</p>
-                <button class="element__like" type="button"></button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="images/kirill-pershin-3-unsplash.jpg"
-                alt="домбай"
-                class="element__image"
-              />
-              <div class="element__container">
-                <p class="element__name">Домбай</p>
-                <button class="element__like" type="button"></button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="images/kalen-emsley-uSFOwYo1qEw-unsplash.jpg"
-                alt="канмор"
-                class="element__image"
-              />
-              <div class="element__container">
-                <p class="element__name">Канмор</p>
-                <button class="element__like" type="button"></button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="images/simon-berger-RBpUVzCP3ws-unsplash.jpg"
-                alt="грюнау-им-Альмталь"
-                class="element__image"
-              />
-              <div class="element__container">
-                <p class="element__name">Грюнау-им-Альмталь</p>
-                <button class="element__like" type="button"></button>
-              </div>
-            </li>
-            <li class="element__card">
-              <img
-                src="images/alin-rusu-QrXFAH7g7So-unsplash.jpg"
-                alt="рейкхольт"
-                class="element__image"
-              />
-              <div class="element__container">
-                <p class="element__name">Рейкхольт</p>
-                <button class="element__like" type="button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="element"></ul>
         </section>
       </main>
 
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
-      <section class="popup">
+      <section class="popup popup_type_profile">
         <div class="popup__container">
           <button class="popup__close" type="button"></button>
           <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form">
+            <form class="popup__form popup__form_type_profile">
               <input
-                class="popup__form-profile popup__form-profile_name"
+                class="popup__input popup__input_name"
                 type="text"
                 name="name"
               />
 
               <input
-                class="popup__form-profile popup__form-profile_about-me"
+                class="popup__input popup__input_about-me"
                 type="text"
                 name="about-me"
               />
 
-              <input class="popup__submit" type="submit" value="Сохранить" />
+              <input
+                class="popup__submit popup__submit_type_profile"
+                type="submit"
+                value="Сохранить"
+              />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="popup popup_type_new-card">
+        <div class="popup__container">
+          <button class="popup__close" type="button"></button>
+          <div class="popup__content">
+            <h2 class="popup__title">Новое место</h2>
+            <form class="popup__form popup__form_type_card">
+              <input
+                class="popup__input popup__input_card-name"
+                type="text"
+                placeholder="Название"
+                name="name"
+              />
+
+              <input
+                class="popup__input popup__input_card-link"
+                type="text"
+                placeholder="Ссылка на картинку"
+                name="about-me"
+              />
+
+              <input
+                class="popup__submit popup__submit_type_card"
+                type="submit"
+                value="Создать"
+              />
             </form>
           </div>
         </div>
       </section>
     </div>
+
+    <section class="popup popup_type_image">
+      <div class="popup__container popup__container_type_image">
+        <figure class="popup__figure">
+          <button class="popup__close" type="button"></button>
+          <img src="#" alt="" class="popup__image" />
+          <figcaption>
+            <h2 class="popup__image-name"></h2>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <template class="template-card">
+      <li class="element__card">
+        <img src="#" alt="" class="element__image" />
+        <button class="element__delete" type="button"></button>
+        <div class="element__container">
+          <p class="element__name"></p>
+          <button class="element__like" type="button"></button>
+        </div>
+      </li>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -6,11 +6,12 @@
   background-image: url(../../../images/close-icon.svg);
   width: 32px;
   height: 32px;
-  background-color: black;
+  background-color: transparent;
   background-size: contain;
   border: none;
   padding: 0;
   transition: 0.8s;
+  z-index: 2;
 }
 
 .popup__close:hover {
