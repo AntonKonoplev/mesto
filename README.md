@@ -10,4 +10,4 @@
 4. Изменения состояния кнопок с помощью псевдоклассов
 5. Добавление и удаление карточек с фотографиями
 
-Ссылка на GitHub Pages https://antonkonoplev.github.io/mesto/index.html
+Ссылка на GitHub Pages https://antonkonoplev.github.io/mesto
