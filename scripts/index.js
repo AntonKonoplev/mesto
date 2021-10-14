@@ -145,6 +145,8 @@ popupTypeProfileOpenBtn.addEventListener("click", inputFormProfile);
 
 function toggleModal(modal) {
   modal.classList.toggle("popup_opened");
+  document.addEventListener("keydown", closePopupClickEsc);
+  document.addEventListener("mousedown", closePopupClickOverlay);
 }
 
 popupTypeProfileOpenBtn.addEventListener("click", () =>
@@ -156,3 +158,22 @@ popupTypeProfileCloseBtn.addEventListener("click", () =>
 popupNewCardOpenBtn.addEventListener("click", () => toggleModal(popupNewCard));
 popupNewCardCloseBtn.addEventListener("click", () => toggleModal(popupNewCard));
 popupImageCloseBtn.addEventListener("click", () => toggleModal(popupImage));
+
+//закрытие попапа при клике на esc
+function closePopupClickEsc(evt) {
+  const popupClose = document.querySelector(".popup_opened");
+  if (evt.key === "Escape") {
+    toggleModal(popupClose);
+  }
+}
+
+//закрытие попапа при клике на оверлей
+function closePopupClickOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    toggleModal(evt.target);
+  }
+}
+
+popupTypeProfile.addEventListener("mousedown", closePopupClickOverlay);
+popupNewCard.addEventListener("mousedown", closePopupClickOverlay);
+popupImage.addEventListener("mousedown", closePopupClickOverlay);

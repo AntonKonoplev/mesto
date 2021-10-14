@@ -1,0 +1,6 @@
+.popup__submit_invalid {
+  background-color: #e5e5e5;
+  pointer-events: none;
+  color: #000000;
+  opacity: 0.3;
+}

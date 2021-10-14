@@ -40,21 +40,29 @@
           <button class="popup__close" type="button"></button>
           <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form popup__form_type_profile">
+            <form class="popup__form popup__form_type_profile" novalidate>
               <input
                 class="popup__input popup__input_name"
                 type="text"
+                id="name-profile"
                 name="name"
                 required
+                minlength="2"
+                maxlength="40"
+                autocomplete="off"
               />
-
+              <span id="name-profile-error" class="error"></span>
               <input
                 class="popup__input popup__input_about-me"
                 type="text"
+                id="about-me"
                 name="about-me"
                 required
+                minlength="2"
+                maxlength="200"
+                autocomplete="off"
               />
-
+              <span id="about-me-error" class="error"></span>
               <input
                 class="popup__submit popup__submit_type_profile"
                 type="submit"
@@ -70,23 +78,29 @@
           <button class="popup__close" type="button"></button>
           <div class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <form class="popup__form popup__form_type_card">
+            <form class="popup__form popup__form_type_card" novalidate>
               <input
                 class="popup__input popup__input_card-name"
                 type="text"
                 placeholder="Название"
+                id="name-card"
                 name="name"
                 required
+                minlength="2"
+                maxlength="40"
+                autocomplete="off"
               />
-
+              <span id="name-card-error" class="error"></span>
               <input
                 class="popup__input popup__input_card-link"
                 type="url"
                 placeholder="Ссылка на картинку"
+                id="link-card"
                 name="link"
                 required
+                autocomplete="off"
               />
-
+              <span id="link-card-error" class="error"></span>
               <input
                 class="popup__submit popup__submit_type_card"
                 type="submit"
@@ -120,6 +134,7 @@
         </div>
       </li>
     </template>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
