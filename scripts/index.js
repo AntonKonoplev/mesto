@@ -104,16 +104,14 @@ function addNewCard(event) {
   const newCardLink = event.currentTarget.querySelector(
     ".popup__input_card-link"
   ).value;
-  openPopup(popupNewCard);
+  closePopup(popupNewCard);
 
   addCard({
     name: newCardTitle,
     link: newCardLink,
   });
   //очистка формы
-  document.addEventListener("submit", (cardForm) => {
-    cardForm.target.reset();
-  });
+  event.currentTarget.reset();
 }
 
 //попап с карточкой
@@ -148,13 +146,15 @@ popupTypeProfileOpenBtn.addEventListener("click", inputFormProfile);
 //открытие/закрытие попапов
 
 function openPopup(modal) {
-  modal.classList.toggle("popup_opened");
+  modal.classList.add("popup_opened");
+  document.addEventListener("keydown", closePopupClickEsc);
+  modal.addEventListener("mousedown", closePopupClickOverlay);
 }
 
 function closePopup(modal) {
-  document.addEventListener("keydown", closePopupClickEsc);
-  document.addEventListener("mousedown", closePopupClickOverlay);
-  modal.classList.toggle("popup_opened");
+  document.removeEventListener("keydown", closePopupClickEsc);
+  document.removeEventListener("mousedown", closePopupClickOverlay);
+  modal.classList.remove("popup_opened");
 }
 
 popupTypeProfileOpenBtn.addEventListener("click", () =>
@@ -173,7 +173,6 @@ function closePopupClickEsc(evt) {
     const popupClose = document.querySelector(".popup_opened");
     if (popupClose) {
       closePopup(popupClose);
-      popupClose.removeEventListener("keydown", closePopupClickEsc);
     }
   }
 }
@@ -181,12 +180,6 @@ function closePopupClickEsc(evt) {
 //закрытие попапа при клике на оверлей
 function closePopupClickOverlay(evt) {
   if (evt.target === evt.currentTarget) {
-    const popupClose = document.querySelector(".popup_opened");
     closePopup(evt.target);
-    popupClose.addEventListener("mousedown", closePopupClickOverlay);
   }
 }
-
-popupTypeProfile.addEventListener("mousedown", closePopupClickOverlay);
-popupNewCard.addEventListener("mousedown", closePopupClickOverlay);
-popupImage.addEventListener("mousedown", closePopupClickOverlay);
