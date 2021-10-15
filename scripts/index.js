@@ -104,17 +104,21 @@ function addNewCard(event) {
   const newCardLink = event.currentTarget.querySelector(
     ".popup__input_card-link"
   ).value;
-  toggleModal(popupNewCard);
+  openPopup(popupNewCard);
 
   addCard({
     name: newCardTitle,
     link: newCardLink,
   });
+  //очистка формы
+  document.addEventListener("submit", (cardForm) => {
+    cardForm.target.reset();
+  });
 }
 
 //попап с карточкой
 function popupOpenImage(event) {
-  toggleModal(popupImage);
+  openPopup(popupImage);
   popupFullImage.src = event.target.src;
   popupImageTitle.textContent =
     event.currentTarget.parentElement.querySelector(
@@ -130,7 +134,7 @@ function submifFormProfile(evt) {
   evt.preventDefault();
   profileName.textContent = inputName.value;
   profileAboutMe.textContent = inputAboutMe.value;
-  toggleModal(popupTypeProfile);
+  closePopup(popupTypeProfile);
 }
 formTypeProfile.addEventListener("submit", submifFormProfile);
 
@@ -143,34 +147,43 @@ popupTypeProfileOpenBtn.addEventListener("click", inputFormProfile);
 
 //открытие/закрытие попапов
 
-function toggleModal(modal) {
+function openPopup(modal) {
   modal.classList.toggle("popup_opened");
+}
+
+function closePopup(modal) {
   document.addEventListener("keydown", closePopupClickEsc);
   document.addEventListener("mousedown", closePopupClickOverlay);
+  modal.classList.toggle("popup_opened");
 }
 
 popupTypeProfileOpenBtn.addEventListener("click", () =>
-  toggleModal(popupTypeProfile)
+  openPopup(popupTypeProfile)
 );
 popupTypeProfileCloseBtn.addEventListener("click", () =>
-  toggleModal(popupTypeProfile)
+  closePopup(popupTypeProfile)
 );
-popupNewCardOpenBtn.addEventListener("click", () => toggleModal(popupNewCard));
-popupNewCardCloseBtn.addEventListener("click", () => toggleModal(popupNewCard));
-popupImageCloseBtn.addEventListener("click", () => toggleModal(popupImage));
+popupNewCardOpenBtn.addEventListener("click", () => openPopup(popupNewCard));
+popupNewCardCloseBtn.addEventListener("click", () => closePopup(popupNewCard));
+popupImageCloseBtn.addEventListener("click", () => closePopup(popupImage));
 
 //закрытие попапа при клике на esc
 function closePopupClickEsc(evt) {
-  const popupClose = document.querySelector(".popup_opened");
   if (evt.key === "Escape") {
-    toggleModal(popupClose);
+    const popupClose = document.querySelector(".popup_opened");
+    if (popupClose) {
+      closePopup(popupClose);
+      popupClose.removeEventListener("keydown", closePopupClickEsc);
+    }
   }
 }
 
 //закрытие попапа при клике на оверлей
 function closePopupClickOverlay(evt) {
   if (evt.target === evt.currentTarget) {
-    toggleModal(evt.target);
+    const popupClose = document.querySelector(".popup_opened");
+    closePopup(evt.target);
+    popupClose.addEventListener("mousedown", closePopupClickOverlay);
   }
 }
 

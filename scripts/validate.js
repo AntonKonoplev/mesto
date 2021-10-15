@@ -26,7 +26,7 @@ const toggleButtonState = (button, isActive, config) => {
     button.classList.remove(config.inactiveButtonClass);
     button.disabled = false;
   } else {
-    button.classList.add("popup__submit_invalid");
+    button.classList.add(config.inactiveButtonClass);
     button.disabled = true;
   }
 };
@@ -34,6 +34,8 @@ const toggleButtonState = (button, isActive, config) => {
 const setEventListers = (formElement, config) => {
   const inputsList = formElement.querySelectorAll(config.inputSelector);
   const submitButton = formElement.querySelector(config.submitButtonSelector);
+  const isFormValid = formElement.checkValidity();
+  toggleButtonState(submitButton, isFormValid, config);
 
   Array.from(inputsList).forEach((inputElement) => {
     inputElement.addEventListener("input", (evt) => {
@@ -45,6 +47,7 @@ const setEventListers = (formElement, config) => {
 
   formElement.addEventListener("submit", (evt) => {
     evt.preventDefault();
+    toggleButtonState(submitButton, false, config);
   });
 };
 
