@@ -167,7 +167,7 @@ popupNewCardOpenBtn.addEventListener("click", () => openPopup(popupNewCard));
 popupNewCardCloseBtn.addEventListener("click", () => closePopup(popupNewCard));
 popupImageCloseBtn.addEventListener("click", () => closePopup(popupImage));
 
-//закрытие попапа при клике на esc
+//закрытие попапа при клике на escape
 function closePopupClickEsc(evt) {
   if (evt.key === "Escape") {
     const popupClose = document.querySelector(".popup_opened");
