@@ -153,7 +153,7 @@ function openPopup(modal) {
 
 function closePopup(modal) {
   document.removeEventListener("keydown", closePopupClickEsc);
-  document.removeEventListener("mousedown", closePopupClickOverlay);
+  modal.removeEventListener("mousedown", closePopupClickOverlay);
   modal.classList.remove("popup_opened");
 }
 
