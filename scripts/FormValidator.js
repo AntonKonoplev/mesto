@@ -2,6 +2,10 @@ export class FormValidator {
   constructor(settings, form) {
     this._form = form;
     this._settings = settings;
+
+    this._buttonElement = this._form.querySelector(
+      this._settings.submitButtonSelector
+    );
   }
 
   //показ ошибки
@@ -61,4 +65,9 @@ export class FormValidator {
     });
     this._setEventListers();
   }
+
+  disableSubmitButton = () => {
+    this._buttonElement.classList.add(this._settings.inactiveButtonClass);
+    this._buttonElement.disabled = true;
+  };
 }

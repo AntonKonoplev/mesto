@@ -1,4 +1,3 @@
-import { popupImage } from "./constants.js";
 import { openPopup, closePopup } from "./utils.js";
 import { FormValidator } from "./FormValidator.js";
 import { initialCards } from "./initialCards.js";
@@ -40,8 +39,8 @@ const validationConfig = {
   inputErrorClass: "popup__input_state_invalid",
 };
 
-const editProfileValidator = new FormValidator(validationConfig, addCardForm);
-const addCardValidator = new FormValidator(validationConfig, editForm);
+const editProfileValidator = new FormValidator(validationConfig, editForm);
+const addCardValidator = new FormValidator(validationConfig, addCardForm);
 
 editProfileValidator.enableValidation();
 addCardValidator.enableValidation();
@@ -95,7 +94,10 @@ popupTypeProfileOpenBtn.addEventListener("click", inputFormProfile);
 popupTypeProfileOpenBtn.addEventListener("click", () =>
   openPopup(popupTypeProfile)
 );
-popupNewCardOpenBtn.addEventListener("click", () => openPopup(popupNewCard));
+popupNewCardOpenBtn.addEventListener("click", () => {
+  addCardValidator.disableSubmitButton();
+  openPopup(popupNewCard);
+});
 
 const popups = document.querySelectorAll(".popup");
 
