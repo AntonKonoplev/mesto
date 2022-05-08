@@ -1,11 +1,9 @@
-import { openPopup } from "./utils.js";
-import { popupFullImage, popupImageTitle, popupImage } from "./constants.js";
-
 export class Card {
-  constructor(data, cardSelector) {
+  constructor({ data, popupOpenImage }, cardSelector) {
     this._templateCard = document.querySelector(cardSelector).content;
     this._name = data.name;
     this._link = data.link;
+    this._popupOpenImage = popupOpenImage;
   }
 
   _getElement() {
@@ -23,20 +21,6 @@ export class Card {
     this._newCard.remove();
   };
 
-  _popupOpenImage(event) {
-    openPopup(popupImage);
-
-    popupFullImage.src = event.target.src;
-    popupImageTitle.textContent =
-      event.currentTarget.parentElement.querySelector(
-        ".element__name"
-      ).textContent;
-    popupFullImage.alt =
-      event.currentTarget.parentElement.querySelector(
-        ".element__name"
-      ).textContent;
-  }
-
   _setEventListeners() {
     this._newCard
       .querySelector(".element__delete")
@@ -46,7 +30,9 @@ export class Card {
       .addEventListener("click", this._likeToggle);
     this._newCard
       .querySelector(".element__image")
-      .addEventListener("click", this._popupOpenImage);
+      .addEventListener("click", () =>
+        this._popupOpenImage({ name: this._text, src: this._link })
+      );
   }
 
   createCard() {
