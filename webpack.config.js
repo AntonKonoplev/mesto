@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/pages/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
@@ -21,6 +22,7 @@ module.exports = {
       template: "./src/index.html",
     }),
     new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [

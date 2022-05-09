@@ -6,13 +6,6 @@ export class Card {
     this._popupOpenImage = popupOpenImage;
   }
 
-  _getElement() {
-    this._element = document
-      .querySelector(this._cardSelector)
-      .content.querySelector(".element-card")
-      .cloneNode(true);
-  }
-
   _likeToggle = (evt) => {
     evt.target.classList.toggle("element__like_active");
   };
@@ -30,9 +23,7 @@ export class Card {
       .addEventListener("click", this._likeToggle);
     this._newCard
       .querySelector(".element__image")
-      .addEventListener("click", () =>
-        this._popupOpenImage({ name: this._text, src: this._link })
-      );
+      .addEventListener("click", () => this._popupOpenImage());
   }
 
   createCard() {
