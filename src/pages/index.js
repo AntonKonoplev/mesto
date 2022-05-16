@@ -2,7 +2,26 @@ import "./index.css";
 import { FormValidator } from "../components/FormValidator";
 import { Card } from "../components/Card.js";
 import { Section } from "../components/Section.js";
-import { popupImage } from "../utils/constants.js";
+import {
+  popupImage,
+  template,
+  popupTypeProfile,
+  popupTypeProfileOpenBtn,
+  popupNewCard,
+  popupNewCardOpenBtn,
+  popupEditAvatar,
+  popupEditAvatarBtn,
+  inputName,
+  inputAboutMe,
+  profileName,
+  profileAboutMe,
+  avatar,
+  addCardForm,
+  editForm,
+  editAvatarForm,
+  popupDelete,
+  validationConfig,
+} from "../utils/constants.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
@@ -18,40 +37,7 @@ const api = new Api({
   },
 });
 
-const template = ".template-card";
-
-const popupTypeProfile = ".popup_type_profile";
-const popupTypeProfileOpenBtn = document.querySelector(".profile__edit-button");
-
-const popupNewCard = ".popup_type_new-card";
-const popupNewCardOpenBtn = document.querySelector(".profile__add-button");
-
-const popupEditAvatar = ".popup_type_avatar";
-const popupEditAvatarBtn = document.querySelector(
-  ".profile__avatar-edit-button"
-);
-const inputName = document.querySelector(".popup__input_name");
-const inputAboutMe = document.querySelector(".popup__input_about-me");
-
-const profileName = ".profile__name";
-const profileAboutMe = ".profile__about-me";
-const avatar = ".profile__avatar";
-
-const addCardForm = document.querySelector(".popup__form_type_card");
-const editForm = document.querySelector(".popup__form_type_profile");
-const editAvatarForm = document.querySelector(".popup__form_type_avatar");
-
 let userId;
-
-const popupDelete = ".popup_type_deleteCard";
-
-const validationConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__submit",
-  inactiveButtonClass: "popup__submit_invalid",
-  inputErrorClass: "popup__input_state_invalid",
-};
 
 const deleteCard = (data) => {
   deleteCardPopup.data = data;
@@ -120,12 +106,11 @@ const popupFormCard = new PopupWithForm(popupNewCard, {
       name: data.name,
       link: data.link,
     };
-
-    const postCardApi = api.postCard(newCardApi);
-    postCardApi
-      .then(() => {
-        toLoad(popupNewCard, false);
-        return newCardApi.createCard;
+    api
+      .postCard(newCardApi)
+      .then((res) => {
+        cardList.addItem(createCard(res));
+        popupFormCard.close();
       })
       .catch((err) => console.log(err))
       .finally(() => {
@@ -142,7 +127,6 @@ const popupFormProfile = new PopupWithForm(popupTypeProfile, {
       .editUser(data)
       .then((res) => {
         user.setUserInfo(res);
-        toLoad(popupTypeProfile, false);
         popupFormProfile.close();
       })
       .catch((err) => console.log(err))

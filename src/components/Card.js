@@ -23,11 +23,11 @@ export class Card {
           this._data = res;
           this._newCard.querySelector(".element__like-meter").textContent =
             res.likes.length;
+          this._newCard
+            .querySelector(".element__like")
+            .classList.add("element__like_active");
         })
         .catch((err) => console.log(err));
-      this._newCard
-        .querySelector(".element__like")
-        .classList.add("element__like_active");
     } else {
       this._deleteCardLike(this._cardId)
         .then((res) => {
