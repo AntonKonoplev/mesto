@@ -1,0 +1,12 @@
+.popup__container_type_deleteCard {
+    min-width: 430px;
+    min-height: 181px;
+}
+
+@media (max-width: 560px) {
+    .popup__container_type_deleteCard {
+        min-width: 280px;
+        min-height: 100px;
+    }
+  }
+  

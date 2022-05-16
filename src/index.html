@@ -17,11 +17,17 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            src="<%=require('../src/images/Avatar.png')%>"
-            alt="аватар"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-edit">
+            <img
+              src="<%=require('../src/images/Avatar.png')%>"
+              alt="аватар"
+              class="profile__avatar"
+            />
+            <button
+              title="Загрузить новый аватар"
+              class="profile__avatar-edit-button"
+            ></button>
+          </div>
           <div class="profile__container">
             <div class="profile__info">
               <div class="profile__name-container">
@@ -63,7 +69,7 @@
                 class="popup__input popup__input_about-me"
                 type="text"
                 id="about-me"
-                name="about-me"
+                name="about"
                 required
                 minlength="2"
                 maxlength="200"
@@ -111,7 +117,7 @@
               <input
                 class="popup__submit popup__submit_type_card"
                 type="submit"
-                value="Создать"
+                Создать
               />
             </form>
           </div>
@@ -131,13 +137,53 @@
       </div>
     </section>
 
+    <section class="popup popup_type_deleteCard">
+      <div class="popup__container popup__container_type_deleteCard">
+        <form class="popup__form popup__form_type_deleteCard">
+          <p class="popup__title">Вы уверены?</p>
+          <button class="popup__submit popup__submit-confirm" type="submit">
+            Да
+          </button>
+        </form>
+        <button class="popup__close" type="button"></button>
+      </div>
+    </section>
+
+    <section class="popup popup_type_avatar">
+      <div class="popup__container popup__container_type_avatar">
+        <p class="popup__title">Обновить аватар</p>
+        <form class="popup__form popup__form_type_avatar" novalidate>
+          <input
+            class="popup__input popup__input_avatar-link"
+            type="url"
+            name="link"
+            id="link-avatar"
+            required
+            autocomplete="off"
+            placeholder="Ссылка на изображение"
+          />
+          <span id="link-avatar-error" class="error"></span>
+          <input
+            type="submit"
+            value="Сохранить"
+            class="popup__submit popup__submit_type_avatar"
+          />
+        </form>
+
+        <button class="popup__close" type="button"></button>
+      </div>
+    </section>
+
     <template class="template-card">
       <li class="element__card">
         <img src="#" alt="" class="element__image" />
         <button class="element__delete" type="button"></button>
         <div class="element__container">
           <p class="element__name"></p>
-          <button class="element__like" type="button"></button>
+          <div class="element__like-container">
+            <button class="element__like" type="button"></button>
+            <span class="element__like-meter"></span>
+          </div>
         </div>
       </li>
     </template>
